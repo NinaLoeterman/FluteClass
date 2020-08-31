@@ -1,8 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 
 const EntryPage = () => {
-    return ( <View>Im the Entry Page</View> );
+    return ( <View>
+        <ActivityIndicator size="large" />
+        <Text>Im the Entry Page</Text></View> );
 }
  
 export default EntryPage;

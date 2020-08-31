@@ -1,20 +1,11 @@
 import React from "react";
 import * as firebase from "firebase";
 import "firebase/auth";
-import { Button } from "react-native";
+import { Button, View, StyleSheet, Text } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBWQEmIV5axO0xDud1sfE_5C_lEb79xJno",
-  authDomain: "hagarsfluteclass.firebaseapp.com",
-  databaseURL: "https://hagarsfluteclass.firebaseio.com",
-  projectId: "hagarsfluteclass",
-  storageBucket: "hagarsfluteclass.appspot.com",
-  messagingSenderId: "240014085758",
-  appId: "1:240014085758:web:b7ba34c2f11b741163d22f",
-  measurementId: "G-6M0HQJCFN9",
-};
 
-firebase.initializeApp(firebaseConfig);
+
 // firebase.analytics();
 
 // firebase.auth().onAuthStateChanged((user) => {
@@ -23,9 +14,21 @@ firebase.initializeApp(firebaseConfig);
 //     }
 
 const Login = () => {
-  return <>
+  return <View>
+    <Text>Login</Text>
+    <TextInput style={styles.loginInput} placeholder='email' />
+    <TextInput style={styles.loginInput} placeholder='password'/>
   <Button title={'button'}/>
-  </>;
+  </View>;
 };
+
+const styles = StyleSheet.create({
+  loginInput: {
+    borderColor: 'black',
+    borderBottomWidth: 1,
+    margin: 10
+  }
+
+})
 
 export default Login;
