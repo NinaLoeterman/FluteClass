@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Login from './components/login/Login.jsx'
+import {createSwitchNavigator} from 'react-navigation'
+import EntryPage from './components/entryPage/EntryPage.jsx'
+import StudentsPage from './components/studentsPage/StudentsPage.jsx'
 
 export default function App() {
   return (
@@ -12,6 +15,12 @@ export default function App() {
     </View>
   );
 }
+
+const AppSwitchNavigator = createSwitchNavigator({
+  EntryPage: EntryPage,
+  Login: Login,
+  StudentsPage: StudentsPage
+})
 
 const styles = StyleSheet.create({
   container: {
