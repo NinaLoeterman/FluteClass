@@ -18,7 +18,7 @@ const Login = () => {
     <Text>Login</Text>
     <TextInput style={styles.loginInput} placeholder='email' />
     <TextInput style={styles.loginInput} placeholder='password'/>
-  <Button title={'button'}/>
+  <Button title={'Login'}/>
   </View>;
 };
 

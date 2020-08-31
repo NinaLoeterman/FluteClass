@@ -15,9 +15,9 @@ firebase.initializeApp(firebaseConfig);
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={require('./components/pics/Play.png')}/>
-      <AppNavigator />
-      <Login />
+      {/* <Image source={require('./components/pics/Play.png')}/> */}
+      {/* <AppNavigator /> */}
+      <StudentsPage />
       <StatusBar style="auto" />
     </View>
   );
