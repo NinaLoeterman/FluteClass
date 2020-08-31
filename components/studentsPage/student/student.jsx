@@ -7,10 +7,11 @@ const Student = () => {
     <View style={styles.container}>
       <View style={styles.studentContainer}>
         <Image style={styles.profilePic} source={require("/Users/ninaloeterman/FluteClassProject/FluteClass/components/pics/tim-mossholder-vhsN1p7Cc_8-unsplash.jpg")}/>
-        <Text>student</Text>
+        <View style={styles.studentInfo}>
+        <Text style={styles.studentText}>student Name</Text>
+        <Text style={styles.studentSubText}>something</Text>
+        </View>
       </View>
-      <Text style={styles.studentContainer}>student</Text>
-      <Text style={styles.studentContainer}>student</Text>
     </View>
   );
 };
@@ -23,12 +24,26 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: vw(90),
     height: 100,
-    backgroundColor: "yellow",
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    alignItems: 'center',
+    padding: 10,
+
   },
   profilePic: {
-      width: 50,
-      height: 50,
-      borderRadius: 50/2,
+      width: 80,
+      height: 80,
+      borderRadius: 80/2,
+  }, 
+  studentInfo: {
+      marginLeft: 20,
+  },
+  studentSubText: {
+    color: '#7c9cbf'
+  },
+  studentText: {
+      color: '#0880ae',
+      fontSize: 18,
   }
 });
 export default Student;

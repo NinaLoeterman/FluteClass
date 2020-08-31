@@ -34,7 +34,7 @@ const AppNavigator = createAppContainer(AppSwitchNavigator)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ebf4f8',
     alignItems: 'center',
     justifyContent: 'center',
   },
