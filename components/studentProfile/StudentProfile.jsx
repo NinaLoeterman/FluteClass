@@ -1,7 +1,10 @@
 import React from 'react';
 
-const  = () => {
-    return (  );
+const StudentProfile = () => {
+    return ( <View>
+        
+
+    </View> );
 }
  
-export default ;
+export default StudentProfile;
