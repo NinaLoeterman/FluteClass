@@ -1,13 +1,33 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Picker } from "react-native";
 import Student from "./student/student";
+import RNPickerSelect from "react-native-picker-select";
+import { Ionicons } from "@expo/vector-icons";
 
 const StudentsPage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>The Studio</Text>
-        <Text style={styles.dropdown}>dropdown</Text>
+        <View style={styles.dropdown}>
+          <RNPickerSelect
+            placeholder={{
+              label: "Choose a Studio",
+              value: null,
+            }}
+            onValueChange={(value) => console.log(value)}
+            items={[
+              { label: "Stricker", value: "stricker" },
+              { label: "Jerusalem Academy", value: "jamd" },
+            ]}
+          />
+          <Ionicons
+            style={styles.dropDownArrow}
+            name="ios-arrow-down"
+            size={14}
+            color="grey"
+          />
+        </View>
       </View>
 
       <Student />
@@ -29,6 +49,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 20,
+  },
+  dropdown: {
+    backgroundColor: "white",
+    padding: 10,
+    borderRadius: 10,
+    flexDirection: "row",
+  },
+  dropDownArrow: {
+    marginLeft: 10,
+    alignSelf: "center",
   },
 });
 

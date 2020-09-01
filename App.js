@@ -8,6 +8,8 @@ import StudentsPage from './components/studentsPage/StudentsPage.jsx'
 import "react-native-gesture-handler";
 import firebase from 'firebase'
 import {firebaseConfig} from './components/login/config'
+import Student from './components/studentsPage/student/student.jsx';
+import StudentProfile from './components/studentProfile/StudentProfile.jsx';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -17,7 +19,8 @@ export default function App() {
     <View style={styles.container}>
       {/* <Image source={require('./components/pics/Play.png')}/> */}
       {/* <AppNavigator /> */}
-      <StudentsPage />
+      {/* <StudentsPage /> */}
+      <StudentProfile />
       <StatusBar style="auto" />
     </View>
   );
