@@ -19,8 +19,8 @@ export default function App() {
     <View style={styles.container}>
       {/* <Image source={require('./components/pics/Play.png')}/> */}
       {/* <AppNavigator /> */}
-      {/* <StudentsPage /> */}
-      <StudentProfile />
+      <StudentsPage />
+      {/* <StudentProfile /> */}
       <StatusBar style="auto" />
     </View>
   );

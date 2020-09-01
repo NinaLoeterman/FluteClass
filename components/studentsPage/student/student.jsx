@@ -13,8 +13,9 @@ const Student = () => {
             source={require("/Users/ninaloeterman/FluteClassProject/FluteClass/components/pics/tim-mossholder-vhsN1p7Cc_8-unsplash.jpg")}
           />
           <View style={styles.studentInfo}>
-            <Text style={styles.studentText}>student Name</Text>
-            <Text style={styles.studentSubText}>something</Text>
+            <Text style={styles.studentText}>Nina Loeterman</Text>
+            <Text style={styles.studentSubText}>third year</Text>
+            <Text style={styles.studentSubText}>29</Text>
           </View>
         </View>
         <Ionicons
