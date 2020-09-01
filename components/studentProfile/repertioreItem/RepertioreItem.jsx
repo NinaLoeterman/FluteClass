@@ -1,7 +1,15 @@
-import React from 'react';
+import React from "react";
+import { Text, StyleSheet, View } from "react-native";
 
 const RepertioreItem = () => {
-    return ( <View></View> );
-}
- 
+  return <View style={styles.container}>
+
+  </View>;
+};
+
+const styles = StyleSheet.create({
+  container: {
+
+  },
+});
 export default RepertioreItem;
