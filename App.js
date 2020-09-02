@@ -6,20 +6,17 @@ import {createSwitchNavigator, createAppContainer} from 'react-navigation'
 import EntryPage from './components/entryPage/EntryPage.jsx'
 import StudentsPage from './components/studentsPage/StudentsPage.jsx'
 import "react-native-gesture-handler";
-import firebase from 'firebase'
-import {firebaseConfig} from './components/login/config'
 import Student from './components/studentsPage/student/student.jsx';
 import StudentProfile from './components/studentProfile/StudentProfile.jsx';
 
-firebase.initializeApp(firebaseConfig);
 
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Image source={require('./components/pics/Play.png')}/> */}
-      {/* <AppNavigator /> */}
-      <StudentsPage />
+      <AppNavigator />
+      {/* <StudentsPage /> */}
       {/* <StudentProfile /> */}
       <StatusBar style="auto" />
     </View>
@@ -27,8 +24,8 @@ export default function App() {
 }
 
 const AppSwitchNavigator = createSwitchNavigator({
-  EntryPage: EntryPage,
   Login: Login,
+  EntryPage: EntryPage,
   StudentsPage: StudentsPage
 })
 
