@@ -12,7 +12,7 @@ const Student = () => {
   
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.studentContainer} onPress={() => navigation.navigate('studentProfile')}>
+      <TouchableOpacity style={styles.studentContainer} onPress={() => navigation.navigate('StudentProfile')}>
         <View style={styles.innerStudentContainer}>
           <Image
             style={styles.profilePic}

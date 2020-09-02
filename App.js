@@ -28,9 +28,12 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="login" component={isEntry ? EntryPage : Login} />
-        <Stack.Screen name="studentsPage" component={StudentsPage} />
-        <Stack.Screen name="studentProfile" component={StudentProfile} />
+        <Stack.Screen name="Login" component={isEntry ? EntryPage : Login} />
+        <Stack.Screen
+          name="StudentsPage"
+          component={StudentsPage}
+        />
+        <Stack.Screen name="StudentProfile" component={StudentProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

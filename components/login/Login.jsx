@@ -16,7 +16,7 @@ const Login = () => {
       <TextInput style={styles.loginInput} placeholder="password" />
       <Button
         title={"Submit"}
-        onPress={() => navigation.navigate('studentsPage')}
+        onPress={() => navigation.navigate('StudentsPage')}
       />
       <Button
         title={"Sign in with Google"}
