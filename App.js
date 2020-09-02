@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import Login from "./components/login/Login.jsx";
 import EntryPage from "./components/entryPage/EntryPage.jsx";
@@ -13,6 +13,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 const Stack = createStackNavigator();
 
 export default function App() {
+  const [isEntry, setIsEntry] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsEntry(false);
+    }, 2000);
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -20,11 +28,9 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="studentsPage"
-          component={StudentsPage}
-        />
-        <Stack.Screen name="studentProfile" component={StudentProfile}/>
+        <Stack.Screen name="login" component={isEntry ? EntryPage : Login} />
+        <Stack.Screen name="studentsPage" component={StudentsPage} />
+        <Stack.Screen name="studentProfile" component={StudentProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
