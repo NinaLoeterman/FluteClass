@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   loginInput: {
     borderColor: "black",
     borderBottomWidth: 1,
-    margin: 10,
+    marginTop: 10,
   },
 });
 
