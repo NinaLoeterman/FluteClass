@@ -2,11 +2,17 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { vw, vh, vmin, vmax } from "react-native-expo-viewport-units";
 import { Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+
 
 const Student = () => {
+
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
-      <View style={styles.studentContainer}>
+      <TouchableOpacity style={styles.studentContainer} onPress={() => navigation.navigate('studentProfile')}>
         <View style={styles.innerStudentContainer}>
           <Image
             style={styles.profilePic}
@@ -24,7 +30,7 @@ const Student = () => {
           size={40}
           color="grey"
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -33,7 +39,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
-    // alignContent: 'center'
   },
   studentContainer: {
     flexDirection: "row",
