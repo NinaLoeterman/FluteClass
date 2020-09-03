@@ -22,20 +22,17 @@ export default function App() {
   }, []);
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Login" component={isEntry ? EntryPage : Login} />
-        <Stack.Screen
-          name="StudentsPage"
-          component={StudentsPage}
-        />
-        <Stack.Screen name="StudentProfile" component={StudentProfile} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Login" component={isEntry ? EntryPage : Login} />
+          <Stack.Screen name="StudentsPage" component={StudentsPage} />
+          <Stack.Screen name="StudentProfile" component={StudentProfile} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 

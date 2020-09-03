@@ -2,10 +2,24 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TextInput } from "react-native";
 import RepertioreItem from "./repertioreItem/RepertioreItem";
 import { vw } from "react-native-expo-viewport-units";
+import { Ionicons } from "@expo/vector-icons";
+import { NavigationEvents } from "react-navigation";
+import { useNavigation } from "@react-navigation/native";
+
+
 
 const StudentProfile = () => {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
+      <Ionicons
+          onPress = {() => navigation.goBack()}
+          name="ios-arrow-back"
+          size={40}
+          color="#ff7171"
+        />
       <View style={styles.headingContainer}>
         <Image
           style={styles.profilePic}
