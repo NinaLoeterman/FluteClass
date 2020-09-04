@@ -29,7 +29,6 @@ const StudentsPage = () => {
           />
         </View>
       </View>
-
       <Student />
     </View>
   );
@@ -38,8 +37,10 @@ const StudentsPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
+    paddingTop: 50,
     backgroundColor: "#ebf4f8",
+    justifyContent: 'center',
+    padding: 20,
   },
   title: {
     fontSize: 24,

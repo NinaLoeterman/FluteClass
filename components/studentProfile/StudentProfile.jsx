@@ -3,23 +3,19 @@ import { View, Text, StyleSheet, Image, TextInput } from "react-native";
 import RepertioreItem from "./repertioreItem/RepertioreItem";
 import { vw } from "react-native-expo-viewport-units";
 import { Ionicons } from "@expo/vector-icons";
-import { NavigationEvents } from "react-navigation";
 import { useNavigation } from "@react-navigation/native";
 
-
-
 const StudentProfile = () => {
-
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <Ionicons
-          onPress = {() => navigation.goBack()}
-          name="ios-arrow-back"
-          size={40}
-          color="#ff7171"
-        />
+        onPress={() => navigation.goBack()}
+        name="ios-arrow-back"
+        size={40}
+        color="#ff7171"
+      />
       <View style={styles.headingContainer}>
         <Image
           style={styles.profilePic}
@@ -49,7 +45,12 @@ const StudentProfile = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, marginTop: 50 },
+  container: {
+    flex: 1,
+    padding: 20,
+    paddingTop: 50,
+    backgroundColor: "#ebf4f8",
+  },
   profilePic: {
     height: 100,
     width: 100,
