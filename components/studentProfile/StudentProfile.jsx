@@ -5,8 +5,10 @@ import { vw } from "react-native-expo-viewport-units";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const StudentProfile = () => {
+const StudentProfile = ({ route }) => {
   const navigation = useNavigation();
+
+  const { name } = route.params;
 
   return (
     <View style={styles.container}>
@@ -21,7 +23,7 @@ const StudentProfile = () => {
           style={styles.profilePic}
           source={require("/Users/ninaloeterman/FluteClassProject/FluteClass/components/pics/tim-mossholder-vhsN1p7Cc_8-unsplash.jpg")}
         />
-        <Text style={styles.studentName}>Nina Loeterman</Text>
+        <Text style={styles.studentName}>{name}</Text>
       </View>
       <View style={styles.repertioreContainer}>
         <Text style={styles.repTitle}>Repertiore</Text>

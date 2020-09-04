@@ -5,23 +5,30 @@ import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-
 const Student = () => {
+  const studentObj = {
+    name: "Nina Loeterman",
+    years: "Third Year",
+    age: "29",
+  };
 
   const navigation = useNavigation();
-  
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.studentContainer} onPress={() => navigation.navigate('StudentProfile')}>
+      <TouchableOpacity
+        style={styles.studentContainer}
+        onPress={() => navigation.navigate("StudentProfile", { name: studentObj.name})}
+      >
         <View style={styles.innerStudentContainer}>
           <Image
             style={styles.profilePic}
             source={require("/Users/ninaloeterman/FluteClassProject/FluteClass/components/pics/tim-mossholder-vhsN1p7Cc_8-unsplash.jpg")}
           />
           <View style={styles.studentInfo}>
-            <Text style={styles.studentText}>Nina Loeterman</Text>
-            <Text style={styles.studentSubText}>third year</Text>
-            <Text style={styles.studentSubText}>29</Text>
+            <Text style={styles.studentText}>{studentObj.name}</Text>
+            <Text style={styles.studentSubText}>{studentObj.years}</Text>
+            <Text style={styles.studentSubText}>{studentObj.age}</Text>
           </View>
         </View>
         <Ionicons
