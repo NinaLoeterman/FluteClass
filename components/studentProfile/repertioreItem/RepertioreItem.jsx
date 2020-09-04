@@ -1,37 +1,21 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import { Switch } from "react-native-gesture-handler";
-import { vw, vh, vmin, vmax } from "react-native-expo-viewport-units";
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const RepertioreItem = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   return (
     <View style={styles.container}>
       <View>
-        <Text>Mozart</Text>
-        <Text>sinfonia concertante</Text>
+        <Text style={styles.composer}>Mozart</Text>
+        <Text style={styles.nameOfPiece}>sinfonia concertante</Text>
       </View>
       <View style={styles.repInfo}>
         <View style={styles.timeInfo}>
-          <Text>2</Text>
+          <Text style={styles.numWeeks}>2</Text>
           <Text>weeks</Text>
         </View>
-        <Ionicons
-          style={styles.micOff}
-          name="ios-mic-off"
-          size={40}
-          color="#ff7171"
-        />
-        {/* <Switch
-          trackColor={{ false: "#dbe2ea", true: "#14a38b" }}
-          thumbColor={isEnabled ? "#f4f3f4" : "#f4f3f4"}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
-        /> */}
+        <MaterialCommunityIcons name="theater" size={36} color="grey" />
       </View>
     </View>
   );
@@ -41,8 +25,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: 'space-between',
+    alignItems: 'center',
     backgroundColor: "white",
     borderRadius: 10,
+    padding: 5,
     shadowColor: "rgb(44, 39, 56)",
     shadowOffset: {
       width: 5,
@@ -53,11 +39,21 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   repInfo: {
-      flexDirection: 'row'
+      flexDirection: 'row',
+      width: 90,
+      justifyContent: 'space-between',
+      paddingRight: 10,
+      alignItems: 'center',
   },
   timeInfo: {
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+  },
+  numWeeks: {
+    fontSize: 24,
+  },
+  composer: {
+    fontSize: 24,
   }
 });
 export default RepertioreItem;
