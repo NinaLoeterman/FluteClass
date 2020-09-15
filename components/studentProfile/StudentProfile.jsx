@@ -1,14 +1,21 @@
-import React from "react";
-import { View, Text, StyleSheet, Image, TextInput } from "react-native";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
 import RepertioreItem from "./repertioreItem/RepertioreItem";
-import { vw } from "react-native-expo-viewport-units";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import CommentsPopup from "./CommentPopup/CommentPopup";
 
 const StudentProfile = ({ route }) => {
+  const [leaveComment, setLeaveComment] = useState(false);
+
   const navigation = useNavigation();
 
   const { name } = route.params;
+
+  const commentsPopup = () => {
+    setLeaveComment(true);
+    //trigger leave a comment popup
+  };
 
   return (
     <View style={styles.container}>
@@ -31,17 +38,15 @@ const StudentProfile = ({ route }) => {
       </View>
       <View>
         <Text style={styles.repTitle}>Comments</Text>
-        <View style={styles.textAreaContainer}>
-          <TextInput
-            style={styles.textArea}
-            underlineColorAndroid="transparent"
-            placeholder="Make a new comment"
-            placeholderTextColor="grey"
-            numberOfLines={10}
-            multiline={true}
-          />
-        </View>
+        <Text>Add a comment</Text>
+        <Ionicons
+          onPress={commentsPopup}
+          name="md-add-circle"
+          color="#0880ae"
+          size={40}
+        />
       </View>
+      {leaveComment && <CommentsPopup />}
     </View>
   );
 };
@@ -74,17 +79,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
-  textAreaContainer: {
-    borderColor: "grey",
-    borderWidth: 1,
-    padding: 5,
-    width: vw(90),
-    borderRadius: 10,
-  },
-  textArea: {
-    height: 100,
-    justifyContent: "flex-start",
-  },
+  
 });
 
 export default StudentProfile;

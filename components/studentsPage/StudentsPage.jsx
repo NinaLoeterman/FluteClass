@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     backgroundColor: "#ebf4f8",
-    justifyContent: 'center',
+    // justifyContent: 'center',
     padding: 20,
   },
   title: {

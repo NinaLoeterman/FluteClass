@@ -3,11 +3,7 @@ import { Text, StyleSheet, View } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const RepertioreItem = () => {
-  const [performed, isPerformed] = useState(false)
 
-  const togglePerformed = () => {
-
-  }
 
   return (
     <View style={styles.container}>
