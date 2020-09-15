@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableHighlight } from "react-native";
 import RepertioreItem from "./repertioreItem/RepertioreItem";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import CommentsPopup from "./CommentPopup/CommentPopup";
+import CommentPopup from "./CommentPopup/CommentPopup";
 
 const StudentProfile = ({ route }) => {
-  const [leaveComment, setLeaveComment] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+
 
   const navigation = useNavigation();
 
   const { name } = route.params;
 
-  const commentsPopup = () => {
-    setLeaveComment(true);
-    //trigger leave a comment popup
-  };
+  const toggleModal = () => {
+    setModalVisible(!modalVisible)
+  }
 
   return (
     <View style={styles.container}>
@@ -39,14 +39,20 @@ const StudentProfile = ({ route }) => {
       <View>
         <Text style={styles.repTitle}>Comments</Text>
         <Text>Add a comment</Text>
-        <Ionicons
-          onPress={commentsPopup}
-          name="md-add-circle"
-          color="#0880ae"
-          size={40}
-        />
+
+        <TouchableHighlight
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        >
+          <Ionicons
+            name="md-add-circle"
+            color="#0880ae"
+            size={40}
+          />
+        </TouchableHighlight>
       </View>
-      {leaveComment && <CommentsPopup />}
+      {modalVisible ? <CommentPopup toggleModal={toggleModal}/> : null}
     </View>
   );
 };
@@ -79,7 +85,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 20,
   },
-  
 });
 
 export default StudentProfile;
